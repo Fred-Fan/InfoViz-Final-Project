@@ -11,52 +11,241 @@
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
         <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-        
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="//code.jquery.com/jquery-2.0.0.js"></script>
+        <script src="//d3js.org/d3.v4.min.js"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script src="http://d3js.org/queue.v1.min.js"></script>
+        <script src="js/d3.js"></script>
+        <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+   
     </head>
     
     <body>
         <div class="wrapper">
             <nav class="topnav">
-                <a href="#">Future</a>
+              <!--  <a href="#">Future</a>
                 <a href="#">Study Field</a>
                 <a href="#">Studying Path</a>
                 <a href="#">Changes in Modern Time</a>
-                <a href="#">Historical Timeline</a>
+                <a href="#">Historical Timeline</a>-->
+                <a href="#">Final Project of InfoViz_247, UC Berkeley</a>
             </nav>
             
             <header>
-                <h1>Chinese Students Studying in U.S.</h1>
+                <div class="title">
+                    <h1>Chinese Students Studying in U.S.</h1>
+                </div>
                 <!--add some background introduction of this project-->
-                <p></p>
+                <div class="intro">
+                    <p id="quotes"><q>China is the largest sender of international students to the U.S., with Chinese students accounting for 32.5% (350,755) of all international enrollments (1,078,822) in the U.S..</q></p>
+                    <p id="sources">— <i>Open Doors 2017</i>, Institute of Internation Education (IIE)</p>
+                </div>
+                <!--add navigation buttons-->
+                <div class="navbutton">
+                    <a href="#narrative" class="waves-effect waves-light btn-large  blue lighten-1">Historical Timeline</a>
+                    <a href="#modernchanges" class="waves-effect waves-light btn-large  blue lighten-1">Changes in Modern Time</a>
+                    <a href="#studyfield" class="waves-effect waves-light btn-large  blue lighten-1">Study Field</a>
+                    <a href="#studyingpath" class="waves-effect waves-light btn-large  blue lighten-1">Studying Path</a>
+                    <a href="#future" class="waves-effect waves-light btn-large  blue lighten-1">Future</a>
+                    
+                </div>
             </header>
             
             <!--add infographic here-->
-            <div class="narrative">
-                <iframe width="1250" height="325" frameborder="0" scrolling="no" style="overflow-y:hidden;" src="https://www.easel.ly/index/embedFrame/easel/7322202"></iframe>
+            <div id="narrative">
+                <iframe width="1250" height="595" frameborder="0" scrolling="no" style="overflow-y:hidden;" src="https://www.easel.ly/index/embedFrame/easel/7322202"></iframe>
                 
                 <!--add a zoom-in icon on the last part of infographic-->
-                <div class="button">
-                    <a href="#"><i class="material-icons circle amber lighten-1 right large">zoom_in</i></a>
+                <div class="transition_1">
+                    <a href="#modernchanges"><i class="material-icons circle amber lighten-1 right large">zoom_in</i></a>
                 </div>
             
             </div>
         
             
-            <!--add chart_1-->
-            <div class="sum number and change"></div>
-            
-            <!--add chart_2-->
-            <div class="GDP change"></div>
+            <!--add sum number and change-->
+            <div id="modernchanges">
+                
+            <script type="text/javascript" src="js/script1.js"></script>
+            <div id="chart-A" class="chart1"></div>
+            <div id="chart-B" class="chart2"></div>
+            <div class="summary">
+                <p id="sum_1">From 2000, the number of Chinese students studying in U.S. goes through a stable increase. The number began to soar from the 2007. The changes of Chinese student population in U.S. somehow reflect the gap of economic growth between China and U.S.. </p>
+                <p id="sum_2">Except 2010, an increasing number of Optional Practical Training (OPT) applications were approved for Chinese students by the federal government.
+                </p>
+            </div>
+            <div class="transition_2">
+                    <a href="#studyfield"><img id="wheel" src="images/button2.png" alt="field wheel"></a>
+                </div>
+                
+            </div>
+
             
             <!--add Tableau Geo-distribution-->
-            <div class="Studying path"></div>
+            <div id="studyfield">
+                
+                <div class="students">
+                    <img src="images/students.png" alt="students avatar">
+                    <a href="#studyingpath"><div class="mask"></div></a>
+                </div>
+            
+            
+            <!--add Tableau field of study-->
+
+            <div class='tableauPlaceholder' id='viz1525155627867' style='position: relative'>
+                <noscript><a href='#'><img alt='Field_dashboard ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;in&#47;info247&#47;Field_dashboard&#47;1_rss.png' style='border: none' /></a></noscript>
+                <object class='tableauViz'  style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+                    <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+                    <param name='name' value='info247&#47;Field_dashboard' /><param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;in&#47;info247&#47;Field_dashboard&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='filter' value='publish=yes' />
+                </object></div>
+                <script type='text/javascript'>
+                    var divElement = document.getElementById('viz1525155627867');
+                    var vizElement = divElement.getElementsByTagName('object')[0];
+                    if ( divElement.offsetWidth > 800 ) { 
+                        vizElement.style.width='1000px';vizElement.style.height='827px';
+                    } else if ( divElement.offsetWidth > 500 ) { 
+                    vizElement.style.width='1000px';vizElement.style.height='827px';
+                    } else { 
+                    vizElement.style.width='1000px';vizElement.style.height='827px';
+                    }                     
+                    var scriptElement = document.createElement('script');                    
+                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                </script>
+                
+
+            </div>
+            
+            
+            
+            
             
             <!--add D3 chart-->
-            <div class="Study field"></div>
+            <div id="studyingpath">
+                
+                <div id="dropdown"></div>
+                <div class="states">
+                    <h5>Top 5 States</h5>
+                    <img src="images/popular%20states.png" alt="top 5 states for Chinese students">
+                </div>
+
+                <div id="map"></div>
+
+
+                <div id="chart-C" class="chart3"></div>
+                
+                
+                <div class="rocket">
+                        <a href="#future"><img src="images/rocket-launch.png" arc="rocket to the future"></a>
+                </div>
+            
+            </div>
+
+            
+            
             
             <!--add future trends-->
-            <div class="future"></div>
+            <div id="future">
+                <h2 id="sub_title">Trends in the Future</h2>
             
+                <div class="row">
+                    <div class="col s4">
+                        <div class="card-flip">
+                            <div class="flip">
+                                <div class="front">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="images/diversity.jpg" alt="student diversity">
+                                    </div>
+                                    <div class="card-content blue-text">
+                                        <span class="card-title">Student Diversity</span>
+                                    </div> 
+                                    </div>
+                                    </div>
+                                <div class="back">
+                                    <div class="card blue lighten-1">
+                                        <div class="card-content white-text">
+                                           <p class="flow-text">In addition to the prosperous metropolitan cities such as Beijing, Shanghai and Guangzhou, more students whose hometowns are mid-size or small-size cities in China go to U.S. to pursue education.
+                                        </p> 
+                                        </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div> 
+                        
+                        
+                        <div class="col s4">
+                        <div class="card-flip">
+                            <div class="flip">
+                                <div class="front">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="images/major.jpg" alt="student diversity">
+                                    </div>
+                                    <div class="card-content blue-text">
+                                        <span class="card-title">Study Field Diversity</span>
+                                    </div> 
+                                    </div>
+                                    </div>
+                                <div class="back">
+                                    <div class="card blue lighten-1">
+                                        <div class="card-content white-text">
+                                           <p class="flow-text">The STEM majors will still be the popular choices for Chinese students. Nonetheless, students are choosing more diverse majors in different levels of education in U.S..
+                                        </p> 
+                                        </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="col s4">
+                        <div class="card-flip">
+                            <div class="flip">
+                                <div class="front">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <img src="images/distribution.jpg" alt="student diversity">
+                                    </div>
+                                    <div class="card-content blue-text">
+                                        <span class="card-title">Distribution Diversity</span>
+                                    </div> 
+                                    </div>
+                                    </div>
+                                <div class="back">
+                                    <div class="card blue lighten-1">
+                                        <div class="card-content white-text">
+                                           <p class="flow-text">Cities in the West and East Coast of U.S. are still popular destinations for Chinese students. Nonetheless, places where students traveling to pursue education become more diverse.
+                                        </p> 
+                                        </div>
+                                        </div>
+                                    </div>
+                
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                  </div>
+             
+            </div>
+    
             
         </div>
         
@@ -71,6 +260,41 @@
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
         
     </body>
+    
+    
+    
+    
+    
+      <footer class="page-footer deep-orange lighten-1">
+          <div class="container">
+            <div class="row">
+               <div class="col l6 s12">
+                <h5 class="white-text">Visualization tools</h5>
+                <ul id="tool">
+                  <li>Highcharts</li>
+                  <li>Tableau</li>
+                  <li>D3.js</li>
+                  <li>Adobe Creative Suite</li>
+                </ul>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Data source</h5>
+                <ul id="source">
+                    <li><a class="grey-text text-lighten-3" href="https://www.iie.org/en/Research-and-Insights/Open-Doors">Open Doors 2000-2017, <i>Institute of International Education (IIE)</i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="https://www.brookings.edu/interactives/the-geography-of-foreign-students-in-u-s-higher-education-origins-and-destinations/">Data from U.S. Immigration and Customs Enforcement obtained through a Freedom of Information Act (FOIA) Request, <i>Brookings Institution</i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://usa.chinadaily.com.cn/epaper/2017-04/21/content_29029959.htm">The history of Chinese studying abroad, <i>China Daily USA</i></a></li>
+                  <li><a class="grey-text text-lighten-3" href="http://data.stats.gov.cn/easyquery.htm?cn=E0105">GDP of cities in China 2001-2012, <i>National Bureau of Statistics of China</i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            <p >Designers: <i>Fred Fan & Qian Yu</i></p>
+            © 2018 Copyright
+            </div>
+          </div>
+        </footer>
 
 
 
